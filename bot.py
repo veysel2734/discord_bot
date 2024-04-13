@@ -30,5 +30,5 @@ async def on_message(message):
     else:
         await message.channel.send("bu komutu anlamadım")
 
-client.run("MTIyODczMzU4Mjk1Mjg5MDQzMA.GnGZGQ.jvt7KZDeGcCKigKH_KaZ7ehPxnYME_DRnpP_aY")
+client.run("")
 
