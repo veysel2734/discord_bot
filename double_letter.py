@@ -1,14 +1,29 @@
-def double_letter (str):
-    result = ''
-    for letter in str:
-        result += letter * 2
-    return result
+import discord
+from discord.ext import commands
+import random
 
+intents = discord.Intents.default()
+intents.message_content = True
 
-def secret_function (a,b):
-    print(a,b)
-    return " "
+bot = commands.Bot(command_prefix='$', intents=intents)
 
-print(double_letter("Hello"))
-print(secret_function(1,2))
-print(secret_function("Hello,","world!"))
+@bot.event
+async def on_ready():
+    print(f'{bot.user} olarak giriş yaptık')
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Merhaba! Ben {bot.user}, bir Discord sohbet botuyum!')
+
+a=random.randint(1,100)
+
+@bot.command()
+
+async def rakam(ctx):
+    await ctx.send(a)
+
+@bot.command()
+async def heh(ctx, count_heh = 5):
+    await ctx.send("he" * count_heh)
+
+bot.run("MTIyODczMzU4Mjk1Mjg5MDQzMA.GZwMOt.byvimKLO72DVT7Hi2E-qa3cVSu_k5GIa9AypMU")
